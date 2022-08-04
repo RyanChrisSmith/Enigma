@@ -13,7 +13,7 @@ RSpec.describe Enigma do
 
   it 'has 27 characters in char_set at initialization' do
     expect(@enigma.char_set.count).to eq 27
-    expect(@enigma.char_set).to eq(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "])
+    expect(@enigma.char_set).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
   end
 
   it 'can generate a random key' do
