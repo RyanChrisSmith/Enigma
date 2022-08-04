@@ -16,6 +16,11 @@ RSpec.describe Enigma do
     expect(@enigma.char_set).to eq(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "])
   end
 
+  it 'can generate a random key' do
+
+    expect(@enigma.key_generator).to eq 05179
+  end
+
   xit 'can encrypt a message with optional key and date arguments' do
     @enigma.encrypt("hello world", "02715", "040895")
     expect(@enigma.encrypt).to eq({encryption: "keder ohulw", key: "02715", date: "040895"})
