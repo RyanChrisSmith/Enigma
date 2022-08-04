@@ -16,7 +16,7 @@ RSpec.describe Enigma do
     expect(@enigma.char_set).to eq(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," "])
   end
 
-  xit 'can generate a random key' do
+  it 'can generate a random key' do
     allow_any_instance_of(Enigma).to receive(:key_generator).and_return("78432")
     expect(@enigma.key_generator).to eq("78432")
     allow_any_instance_of(Enigma).to receive(:key_generator).and_return("05666")
