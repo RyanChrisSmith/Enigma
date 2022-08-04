@@ -17,8 +17,10 @@ RSpec.describe Enigma do
   end
 
   it 'can generate a random key' do
-
-    expect(@enigma.key_generator).to eq 05179
+    allow_any_instance_of(Enigma).to receive(:key_generator).and_return(78432)
+    expect(@enigma.key_generator).to eq(78432)
+    allow_any_instance_of(Enigma).to receive(:key_generator).and_return(05666)
+    expect(@enigma.key_generator).to eq(05666)
   end
 
   xit 'can encrypt a message with optional key and date arguments' do
