@@ -23,6 +23,10 @@ RSpec.describe Enigma do
     expect(@enigma.key_generator).to eq(05666)
   end
 
+  it 'can generate todays date every day' do
+    expect(@enigma.todays_date).to eq(04082022)
+  end
+
   xit 'can encrypt a message with optional key and date arguments' do
     @enigma.encrypt("hello world", "02715", "040895")
     expect(@enigma.encrypt).to eq({encryption: "keder ohulw", key: "02715", date: "040895"})
