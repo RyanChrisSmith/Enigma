@@ -36,5 +36,4 @@ RSpec.describe Enigma do
     expect(enigma.encrypt).to eq({encryption: "keder ohulw", key: "02715", date: "040895"})
   end
 
-
 end
