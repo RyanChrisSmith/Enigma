@@ -1,3 +1,4 @@
+
 class Enigma
   attr_reader :char_set
 
@@ -9,4 +10,7 @@ class Enigma
     rand(99999).to_s.rjust(5, "0")
   end
 
+  def todays_date
+    Date.today.strftime("%d%m%y")
+  end
 end

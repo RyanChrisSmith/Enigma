@@ -17,14 +17,16 @@ RSpec.describe Enigma do
   end
 
   it 'can generate a random key' do
-    allow_any_instance_of(Enigma).to receive(:key_generator).and_return(78432)
-    expect(@enigma.key_generator).to eq(78432)
-    allow_any_instance_of(Enigma).to receive(:key_generator).and_return(05666)
-    expect(@enigma.key_generator).to eq(05666)
+    allow_any_instance_of(Enigma).to receive(:key_generator).and_return("78432")
+    expect(@enigma.key_generator).to eq("78432")
+    allow_any_instance_of(Enigma).to receive(:key_generator).and_return("05666")
+    expect(@enigma.key_generator).to eq("05666")
   end
 
   it 'can generate todays date every day' do
-    expect(@enigma.todays_date).to eq(04082022)
+    mocks = double('only_1_enigma')
+    allow(mocks).to receive(:todays_date).and_return("040822")
+    expect(mocks.todays_date).to eq("040822")
   end
 
   xit 'can encrypt a message with optional key and date arguments' do
