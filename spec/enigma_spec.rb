@@ -11,7 +11,11 @@ RSpec.describe Enigma do
     expect(@enigma).to be_a(Enigma)
   end
 
-  it 'can encrypt a message with optional key and date arguments' do
+  it 'has 27 characters in char_set at initialization' do
+    expect(@enigma.char_set.count).to eq 27
+  end
+
+  xit 'can encrypt a message with optional key and date arguments' do
     @enigma.encrypt("hello world", "02715", "040895")
     expect(@enigma.encrypt).to eq({encryption: "keder ohulw", key: "02715", date: "040895"})
   end
