@@ -44,11 +44,13 @@ RSpec.describe Enigma do
     expect(@enigma.encrypt("hello world")).to eq({encryption: "alvzhgfbksn", key: "42837", date: "050822"})
   end
 
-  xit 'decrypt a message with a key (uses todays date)' do
-    expect(@enigma.decrypt(encrypted[:encryption], "02715")).to eq({decryption: "hello world", key: "02715", date: "040895"})
-  end
-
-  xit 'can decrypt a message with key and date' do
+  it 'can decrypt a message with key and date' do
     expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eq({decryption: "hello world", key: "02715", date: "040895"})
   end
+
+  it 'decrypt a message with a key (uses todays date)' do
+    allow(@enigma).to receive(:todays_date).and_return("050822")
+    expect(@enigma.decrypt("okjdvfugyrb", "02715")).to eq({decryption: "hello world", key: "02715", date: "050822"})
+  end
+
 end
