@@ -1,8 +1,6 @@
-require 'todays_datable'
 require 'key_generatable'
 
 class Enigma
-  include TodaysDatable
   include KeyGeneratable
   attr_reader :char_set
 
@@ -10,7 +8,7 @@ class Enigma
     @char_set = ('a'..'z').to_a << ' '
   end
 
-  def encrypt(message, key = key_generator, date = todays_date)
+  def encrypt(message, key = key_generator, date = Date.today.strftime("%d%m%y"))
     characters = message.chars
     offset = (date.to_i ** 2).to_s.slice(-4..-1)
     a_shift = (offset[0].to_i) + (key[0..1].to_i)
@@ -37,10 +35,10 @@ class Enigma
         encrypted_message << @char_set.rotate(d_shift)[@char_set.index(character)]
       end
     end
-    {encryption: encrypted_message.join, key: key, date: date}
+    encrypted = {encryption: encrypted_message.join, key: key, date: date}
   end
 
-  def decrypt(message, key, date = todays_date)
+  def decrypt(message, key, date = Date.today.strftime("%d%m%y"))
     characters = message.chars
     offset = (date.to_i ** 2).to_s.slice(-4..-1)
     a_shift = (offset[0].to_i) + (key[0..1].to_i)
@@ -67,7 +65,7 @@ class Enigma
         decrypted_message << @char_set.rotate((d_shift)*-1)[@char_set.index(character)]
       end
     end
-    {decryption: decrypted_message.join, key: key, date: date}
+    decrypted = {decryption: decrypted_message.join, key: key, date: date}
   end
 
 end
