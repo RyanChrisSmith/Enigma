@@ -4,10 +4,7 @@ require 'key_generatable'
 class Enigma
   include TodaysDatable
   include KeyGeneratable
-  attr_reader :char_set,
-              :message,
-              :key,
-              :date
+  attr_reader :char_set
 
   def initialize
     @char_set = ('a'..'z').to_a << ' '
@@ -20,6 +17,7 @@ class Enigma
     b_shift = (offset[1].to_i) + (key[1..2].to_i)
     c_shift = (offset[2].to_i) + (key[2..3].to_i)
     d_shift = (offset[3].to_i) + (key[3..4].to_i)
+
     encrypted_message = []
     characters.each_with_index do |character, index|
       character.downcase!
@@ -28,6 +26,7 @@ class Enigma
       elsif
         index % 4 == 0
         encrypted_message << @char_set.rotate(a_shift)[@char_set.index(character)]
+        require 'pry' ; binding.pry
       elsif
         index % 4 == 1
         encrypted_message << @char_set.rotate(b_shift)[@char_set.index(character)]
