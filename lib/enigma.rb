@@ -1,5 +1,5 @@
-require 'todays_datable'
-require 'key_generatable'
+require './lib/todays_datable'
+require './lib/key_generatable'
 
 class Enigma
   include TodaysDatable
