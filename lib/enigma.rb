@@ -37,7 +37,7 @@ class Enigma
         encrypted_message << @char_set.rotate(d_shift)[@char_set.index(character)]
       end
     end
-    {encryption: encrypted_message.join, key: key, date: date}
+    encrypted = {encryption: encrypted_message.join, key: key, date: date}
   end
 
   def decrypt(message, key, date = todays_date)
@@ -67,7 +67,7 @@ class Enigma
         decrypted_message << @char_set.rotate((d_shift)*-1)[@char_set.index(character)]
       end
     end
-    {decryption: decrypted_message.join, key: key, date: date}
+    decrypted = {decryption: decrypted_message.join, key: key, date: date}
   end
 
 end
