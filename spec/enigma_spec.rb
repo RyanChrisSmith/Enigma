@@ -40,7 +40,7 @@ RSpec.describe Enigma do
 
   it 'encrypt a message (generates random key and uses todays date)' do
     allow(@enigma).to receive(:todays_date).and_return("050822")
-    allow(@enigma).to receive(:key_generator).and_return('42837')
+    allow(@enigma).to receive(:key_generator).and_return("42837")
     expect(@enigma.encrypt("hello world")).to eq({encryption: "alvzhgfbksn", key: "42837", date: "050822"})
   end
 
