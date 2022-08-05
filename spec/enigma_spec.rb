@@ -53,4 +53,14 @@ RSpec.describe Enigma do
     expect(@enigma.decrypt("okjdvfugyrb", "02715")).to eq({decryption: "hello world", key: "02715", date: "050822"})
   end
 
+  it 'can encrypt and decrypt a message with capital letters and return lower case' do
+    expect(@enigma.encrypt('The BROWN fox rAn away', '59831', '050822')).to eq({encryption: "cdohlnydxwpwgwaixwkdku", key: "59831", date: "050822"})
+
+    expect(@enigma.decrypt("cdohlNydxwPwGWAixWKdku", "59831", "050822")).to eq({decryption: "the brown fox ran away", key: "59831", date: "050822"})
+  end
+
+  it 'can encrypt and decrypt a message while ignoring anything outside of the character set' do
+    expect(@enigma.encrypt("hello!2@ world!", "02715", "040895")).to eq({encryption: "keder!2@cwgkod!", key: "02715", date: "040895"})
+  end
+
 end
