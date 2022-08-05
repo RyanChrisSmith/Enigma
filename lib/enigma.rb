@@ -26,7 +26,6 @@ class Enigma
       elsif
         index % 4 == 0
         encrypted_message << @char_set.rotate(a_shift)[@char_set.index(character)]
-        require 'pry' ; binding.pry
       elsif
         index % 4 == 1
         encrypted_message << @char_set.rotate(b_shift)[@char_set.index(character)]
