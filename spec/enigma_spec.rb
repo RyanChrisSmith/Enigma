@@ -23,10 +23,18 @@ RSpec.describe Enigma do
     expect(@enigma.key_generator).to eq("05666")
   end
 
+  it 'can randomly generate a 5 digit key' do
+    expect(@enigma.key_generator.length).to eq 5
+  end
+
   it 'can generate todays date every day' do
     mocks = double('only_1_enigma')
     allow(mocks).to receive(:todays_date).and_return("040822")
     expect(mocks.todays_date).to eq("040822")
+  end
+
+  it 'can generate todays date in a 6 digit format' do
+    expect(@enigma.todays_date.length).to eq 6
   end
 
   it 'can encrypt a message with optional key and date arguments' do
@@ -61,6 +69,10 @@ RSpec.describe Enigma do
 
   it 'can encrypt and decrypt a message while ignoring anything outside of the character set' do
     expect(@enigma.encrypt("hello!2@ world!", "02715", "040895")).to eq({encryption: "keder!2@cwgkod!", key: "02715", date: "040895"})
+  end
+
+  it 'will return all characters outside of the 27 predefined in the character set' do
+    expect(@enigma.encrypt("!-2_%-#=0", "02715", "040895")).to eq({encryption: "!-2_%-#=0", key: "02715", date: "040895"})
   end
 
 end
