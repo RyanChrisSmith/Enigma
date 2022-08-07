@@ -26,21 +26,17 @@ class Enigma
       character.downcase!
       if @char_set.include?(character) == false
         encrypted_message << character
-      elsif
-        index % 4 == 0
+      elsif index % 4 == 0
         encrypted_message << @char_set.rotate(a_shift)[@char_set.index(character)]
-      elsif
-        index % 4 == 1
+      elsif index % 4 == 1
         encrypted_message << @char_set.rotate(b_shift)[@char_set.index(character)]
-      elsif
-        index % 4 == 2
+      elsif index % 4 == 2
         encrypted_message << @char_set.rotate(c_shift)[@char_set.index(character)]
-      elsif
-        index % 4 == 3
+      elsif index % 4 == 3
         encrypted_message << @char_set.rotate(d_shift)[@char_set.index(character)]
       end
     end
-     encrypted = {encryption: encrypted_message.join, key: key, date: date}
+    { encryption: encrypted_message.join, key: key, date: date }
   end
 
   def decrypt(message, key, date = todays_date)
@@ -56,21 +52,17 @@ class Enigma
       character.downcase!
       if @char_set.include?(character) == false
         decrypted_message << character
-      elsif
-        index % 4 == 0
+      elsif index % 4 == 0
         decrypted_message << @char_set.rotate((a_shift)*-1)[@char_set.index(character)]
-      elsif
-        index % 4 == 1
+      elsif index % 4 == 1
         decrypted_message << @char_set.rotate((b_shift)*-1)[@char_set.index(character)]
-      elsif
-        index % 4 == 2
+      elsif index % 4 == 2
         decrypted_message << @char_set.rotate((c_shift)*-1)[@char_set.index(character)]
-      elsif
-        index % 4 == 3
+      elsif index % 4 == 3
         decrypted_message << @char_set.rotate((d_shift)*-1)[@char_set.index(character)]
       end
     end
-    decrypted = {decryption: decrypted_message.join, key: key, date: date}
+    { decryption: decrypted_message.join, key: key, date: date }
   end
 
 end
