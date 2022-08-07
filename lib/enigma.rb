@@ -13,6 +13,7 @@ class Enigma
   end
 
   def encrypt(message, key = key_generator, date = todays_date)
+
     characters = message.chars
     offset = (date.to_i ** 2).to_s.slice(-4..-1)
     a_shift = (offset[0].to_i) + (key[0..1].to_i)
