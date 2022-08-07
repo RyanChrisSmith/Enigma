@@ -4,7 +4,9 @@ require './lib/key_generatable'
 class Enigma
   include TodaysDatable
   include KeyGeneratable
-  attr_reader :char_set
+  attr_reader :char_set,
+              :key,
+              :date
 
   def initialize
     @char_set = ('a'..'z').to_a << ' '
