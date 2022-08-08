@@ -11,7 +11,7 @@
 
 ### Test Driven Development (4)
     Mocks and/or stubs are used appropriately to ensure two or more of the following: testing is more robust (i.e., testing methods that might not otherwise be tested due to factors like randomness or user input), testing is more efficient, or that classes can be tested without relying on functionality from other classes. Students are able to speak as to how mocks and/or stubs are fulfilling the above conditions. Test coverage metrics show 100% coverage.
+      (file:///Users/ryansmith/Turing/1mod/projects/enigma/coverage/index.html#_AllFiles)
 
 ### Version Control (3)
     Minimum 30 commits and 3 pull requests. More than half of your pull requests include related and logical chunks of functionality, and are named and documented to clearly communicate the purpose of the pull request. No more than 3 commits include multiple pieces of functionality.
-    (file:///Users/ryansmith/Turing/1mod/projects/enigma/coverage/index.html#_AllFiles)
