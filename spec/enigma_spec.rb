@@ -64,7 +64,7 @@ RSpec.describe Enigma do
   it 'can encrypt and decrypt a message with capital letters and return lower case' do
     expect(@enigma.encrypt('The BROWN fox rAn away', '59831', '050822')).to eq({encryption: "cdohlnydxwpwgwaixwkdku", key: "59831", date: "050822"})
 
-    expect(@enigma.decrypt("cdohlNydxwPwGWAixWKdku", "59831", "050822")).to eq({decryption: "the brown fox ran away", key: "59831", date: "050822"})
+    expect(@enigma.decrypt("cdohlNydxwPwGWAixWKdku!", "59831", "050822")).to eq({decryption: "the brown fox ran away!", key: "59831", date: "050822"})
   end
 
   it 'can encrypt and decrypt a message while ignoring anything outside of the character set' do
