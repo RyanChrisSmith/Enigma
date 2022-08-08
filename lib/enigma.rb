@@ -24,7 +24,7 @@ class Enigma
     encrypted_message = []
     characters.each_with_index do |character, index|
       character.downcase!
-      if @char_set.include?(character) == false
+      if !@char_set.include?(character)
         encrypted_message << character
       elsif index % 4 == 0
         encrypted_message << @char_set.rotate(a_shift)[@char_set.index(character)]
@@ -50,7 +50,7 @@ class Enigma
     decrypted_message = []
     characters.each_with_index do |character, index|
       character.downcase!
-      if @char_set.include?(character) == false
+      if !@char_set.include?(character)
         decrypted_message << character
       elsif index % 4 == 0
         decrypted_message << @char_set.rotate((a_shift)*-1)[@char_set.index(character)]
