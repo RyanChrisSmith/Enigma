@@ -75,4 +75,11 @@ RSpec.describe Enigma do
     expect(@enigma.encrypt("!-2_%-#=0", "02715", "040895")).to eq({encryption: "!-2_%-#=0", key: "02715", date: "040895"})
   end
 
+  xit 'can crack a message without the key' do
+    expect(@enigma.crack("vjqtbeaweqihssi", "291018")).to eq({decryption: "hello world end", key: "08304", date: "291018"})
+  end
+
+  xit 'can crack a message without the key and using todays date' do
+    expect(@enigma.crack("vjqtbeaweqihssi")).to eq({decryption: "hello world end", key: "#####", date: "######"})
+  end
 end
