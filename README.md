@@ -4,7 +4,7 @@
     Enigma Class with encrypt and decrypt methods successfully implemented. Encrypt/decrypt command line interfaces successfully implemented
 
 ### OOP (4)
-    Students have implemented either inheritance or at least one module in a logical manner. Students can speak as to how/why inheritance and modules made sense for the given implementations, why they improve the organization of the code, and the distinction between the two.
+    Students have implemented either inheritance or at least one module in a logical manner. Students can speak as to how/why inheritance and modules made sense for the given implementations, why they improve the organization of the code, and the distinction between the two. Created a date and key creation module to keep the enigma class to a simple function of encrypting/decrypting messages.
 
 ### Ruby Conventions and Mechanics (3.5)
     Classes, methods, and variables are well named so that they clearly communicate their purpose. Most enumerables/data structures chosen are the most efficient tool for a given job, and students can speak as to why those enumerables/data structures were chosen.   **Methods longer than 10 lines**
@@ -14,5 +14,4 @@
       (file:///Users/ryansmith/Turing/1mod/projects/enigma/coverage/index.html#_AllFiles)
 
 ### Version Control (3.5)
-    Minimum 30 commits and 3 pull requests. More than half of your pull requests include related and logical chunks of functionality, and are named and documented to clearly communicate the purpose of the pull request. No more than 3 commits include multiple pieces of functionality.
-    ** Didnt quite make 30 commits **
+    Minimum 40 commits and 4 pull requests. All pull requests include related and logical chunks of functionality, and are named and documented to clearly communicate the purpose of the pull request. **A few commits had multiple pieces of functionality**
